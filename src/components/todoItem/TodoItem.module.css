@@ -1,0 +1,17 @@
+.task {
+	display: flex;
+	align-items: center;
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #f9f9f9;
+	position: relative;
+	gap: 4px;
+}
+
+span {
+	flex: 1;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

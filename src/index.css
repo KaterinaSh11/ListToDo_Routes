@@ -17,3 +17,8 @@ a {
 	color: rgb(31, 31, 31);
 }
 
+span {
+	color: black;
+	align-items: center;
+	font-size: x-large;
+}

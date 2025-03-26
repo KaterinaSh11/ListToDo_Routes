@@ -34,7 +34,7 @@ export const TodoItemEdit = ({ setError, refreshToDo, setRefreshToDo }) => {
 	const saveTodoItem = () => {
 		requestChangeToDo(itemTitle, task.completed, params.id).then((response) => {
 			console.log('Задача изменена, ответ сервера: ', response);
-			setRefreshToDo(!refreshToDo);
+			setTask(response);
 			setIsPushedChange(false);
 		});
 	};
@@ -48,19 +48,13 @@ export const TodoItemEdit = ({ setError, refreshToDo, setRefreshToDo }) => {
 		requestDeleteToDo(task.id).then((response) => {
 			console.log('Задача удалена, ответ сервера: ', response);
 			navigate('/');
-			setTimeout(() => {
-				setRefreshToDo(!refreshToDo);
-				setError('');
-			}, 1);
 		});
 	};
 
 	const changeToDo = () => {
-		console.log('task', task);
 		requestChangeToDo(task.title, !task.completed, task.id).then((response) => {
 			console.log(`Состояние чекбокс ${!task.completed}, ответ сервера:`, response);
-			setRefreshToDo(!refreshToDo);
-			setError('');
+			setTask(response);
 		});
 	};
 
